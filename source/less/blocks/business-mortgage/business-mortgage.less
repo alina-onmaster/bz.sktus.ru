@@ -1,0 +1,419 @@
+.business-mortgage {
+  padding-top: 20px;
+
+  &__intro {
+    .container();
+    margin-bottom: 15px;
+
+    @media (min-width: 750px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__intro-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: "text-top" "image" "text-bottom";
+    grid-template-columns: 1fr;
+
+    @media (min-width: 750px) {
+      grid-template-columns: 1fr 320px;
+      grid-template-areas:
+        "text-top image"
+        "text-bottom image"
+        ". image";
+    }
+
+    @media (min-width: 1170px) {
+      column-gap: 60px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    @media (min-width: 750px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    .mp();
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 300;
+    font-family: "Proxima Nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    color: black;
+
+    @media (min-width: 750px) {
+      font-size: 24px;
+    }
+
+    &--top {
+      grid-area: text-top;
+    }
+
+    &--bottom {
+      grid-area: text-bottom;
+    }
+  }
+
+  &__percent-img-wrap {
+    grid-area: image;
+  }
+
+  &__percent-img {
+    width: 100%;
+    max-width: 320px;
+
+  }
+
+  &__for-whom {
+    .container();
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 15px;
+
+    @media (min-width: 750px) {
+      grid-template-columns: auto 1fr 1fr 1fr;
+      grid-template-areas: "title ul ul ul";
+      column-gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 1170px) {
+      grid-template-columns: auto 1fr 1fr 1fr;
+      column-gap: 45px;
+    }
+
+    & .business-mortgage__subtitle {
+      display: inline-block;
+      position: relative;
+      .mp();
+      font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #000000;
+      padding: 10px 40px 10px 20px;
+      margin-bottom: 14px;
+      justify-self: start;
+
+      @media (min-width: 750px) {
+        font-size: 24px;
+        padding: 15px 50px 15px 20px;
+        grid-area: title;
+        align-self: start;
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F7F3F3;
+        z-index: -1;
+        clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+      }
+    }
+
+    & ul {
+      .list();
+      font-family: "Proxima Nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #666565;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 750px) {
+        font-size: 20px;
+        grid-area: ul;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      @media (min-width: 1170px) {
+        gap: 45px;
+      }
+    }
+
+    & li {
+      position: relative;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ECECEC;
+      }
+
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+
+      @media (min-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+        width: 25%;
+        flex-grow: 1;
+        text-align: center;
+        gap: 20px;
+
+        &::before {
+          width: 2px;
+          height: 100%;
+          left: unset;
+          right: -10px;
+        }
+      }
+
+      @media (min-width: 1170px) {
+        flex-direction: row;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      & span {
+        @media (min-width: 1170px) {
+          width: 50%;
+          flex-grow: 1;
+        }
+      }
+
+      & svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__stat {
+    min-height: 100px;
+    background-color: #8ACC60;
+    padding: 30px 0;
+    margin-bottom: 15px;
+
+    @media (min-width: 750px) {
+      padding: 50px 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__stat-wrap {
+    .container();
+  }
+
+  &__stat ul {
+    .list();
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: 750px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 1170px) {
+
+    }
+  }
+
+  &__stat li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    @media (min-width: 750px) {
+      width: 40%;
+      flex-grow: 1;
+    }
+
+    @media (min-width: 1170px) {
+      width: 20%;
+    }
+
+    & .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: @light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width: 750px) {
+        width: 75px;
+        height: 75px;
+      }
+    }
+
+    & .content {
+      width: 50%;
+      flex-grow: 1;
+      color: black;
+
+
+      &__accent-text {
+        .mp();
+        font-family: "Roboto Condensed",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.2;
+
+        &--flex {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+        }
+
+
+
+        & span {
+          font-size: 34px;
+        }
+      }
+
+      &__text {
+        .mp();
+        font-family: "Proxima Nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #395B23;
+        margin-top: 5px;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &__other {
+    .container();
+    margin-bottom: 14px;
+
+    @media (min-width: 750px) {
+      margin-bottom: 40px;
+    }
+    & p {
+      position: relative;
+      .mp();
+      font-family: "Proxima Nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.2;
+      color: black;
+      max-width: 670px;
+      margin: 0 auto;
+      padding-left: 45px;
+
+      @media (min-width: 750px) {
+        font-size: 24px;
+        line-height: 29px;
+        padding-left: 110px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        background: url("../img/business-mortgage/arrow-up.png") no-repeat center;
+        background-size: contain;
+
+        @media (min-width: 750px) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+    }
+  }
+
+  &__contacts {
+    font-family: "Proxima Nova",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #C6084E;
+    padding: 25px 0;
+
+    @media (min-width: 750px) {
+      padding: 50px 0 55px;
+    }
+  }
+
+  &__contacts-wrap {
+    .container();
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: 750px) {
+      flex-direction: row;
+
+    }
+
+    & p.text {
+      .mp();
+      color: white;
+      font-size: 14px;
+
+      @media (min-width: 750px) {
+        width: 40%;
+        flex-grow: 1;
+      }
+
+      @media (min-width: 1170px) {
+        font-size: 24px;
+      }
+    }
+
+    & p.contacts-item {
+      .mp();
+      font-size: 14px;
+      color: #FFB4B4;
+
+      @media (min-width: 750px) {
+        width: 20%;
+        flex-grow: 1;
+      }
+
+      @media (min-width: 1170px) {
+        font-size: 24px;
+      }
+
+
+      & span,
+      & a {
+        font-family: "Roboto Condensed",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #FFE4E4;
+        font-weight: 700;
+        font-size: 14px;
+
+        @media (min-width: 750px) {
+          display: block;
+        }
+
+        @media (min-width: 1170px) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
